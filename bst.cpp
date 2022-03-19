@@ -15,7 +15,7 @@ class Node {
         Node(int value); // constructor
         Node* Search(Node* wn, int value);
         Node* Insert(Node* wn, int value); // inserts number into tree
-        // InOrder function
+        // TODO: InOrder function
         Node* Smallest(Node* wn); // returns smallest node in tree
         Node* Delete(Node* wn, int value); // removes number from tree
 };
@@ -76,6 +76,7 @@ Node* Node::Insert(Node* wn, int value) {
     return wn; // get rid of those pesky warnings
 }
 
+// returns smallest node in tree
 Node* Node::Smallest(Node* wn) {
 
     // base case
@@ -102,11 +103,11 @@ Node* Node::Delete(Node* wn, int value) {
     
     // if the value is less than wn's then the value we're looking for is left
     } else if (wn->data > value) {
-        wn->left = Delete(wn, value);
+        wn->left = Delete(wn->left, value); // parameter changed from wn to wn->left
     
     // if the value is more than wn's then the value we're looking for is right
     } else if (wn->data < value) {
-        wn->right = Delete(wn, value);
+        wn->right = Delete(wn->right, value); // parameter changed from wn to wn->right
     
     // this should be the only case where the wn is the node we're looking for
     } else {
@@ -141,6 +142,8 @@ Node* Node::Delete(Node* wn, int value) {
 
 int main() {
 
+    // all test code
+
     /*Node tree, *root = NULL;
     root = tree.Insert(root, 5);*/
     /*Node tree(5);
@@ -157,7 +160,6 @@ int main() {
     tree.Delete(&tree, 7);
 
     //Node* test = tree.Smallest(&tree);
-
 
     return 0;
 }
