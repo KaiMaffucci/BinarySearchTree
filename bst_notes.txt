@@ -1,4 +1,5 @@
 
+This is not documentation per say, but rather a look at what's going on inside my head. Actual documentation coming soon. 
 
 INSERT FUNCTION (inserts new value into tree)
 input(s): wn (working node) (start with root node, this is implied from now on) and a value (eg. integer)
