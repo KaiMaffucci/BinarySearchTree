@@ -1,0 +1,36 @@
+
+
+INSERT FUNCTION (inserts new value into tree)
+input(s): wn (working node) (start with root node, this is implied from now on) and a value (eg. integer)
+
+if wn doesn't exist (is null), create it (with value)
+if value is greater than the wn's, then the new wn is now the right child of the current wn (recursion occurs)
+if value is less than the wn's, then the new wn is now the left child of the current wn (recursion occurs)
+if value is equal to the wn's then stop, as you just tried to add a value that already exists (this isn't necessary to explicity program in)
+return working node when function is done 
+
+FIND/SEARCH FUNCTION (finds a particular value)
+input(s): wn (working node) and a value (eg. integer)
+
+if data in wn is desired value, then return wn (which really is just a pointer to wn)
+if data in wn is less than desired value, then the new wn is now the right child of the current wn (recursion occurs)
+if data in wn is greater than desired value, then the new wn is now the left child of the current wn (recursion occurs)
+
+DELETE FUNCTION
+//there's recursion here but i need to find out where; this is for sure the hardest function to write
+input(s): value
+
+find which node the value is stored at (this is our wn)
+if it's empty do nothing
+if wn has no children (is leaf), just delete it
+if wn has one child, make that one child the new wn and delete the old node
+(OPTION 1) if wn has two children, go to right child, then keep going down left bath until bottom is reached. the node we just reached is removed and the node with the value we're deleting becomes the node/gets the value of the node we just removed.
+(OPTION 2) if wn has two children, the wn is deleted and becomes the right child
+return new root
+
+INORDER FUNCTION (prints values in the tree in order)
+input(s): working node
+
+
+
+
