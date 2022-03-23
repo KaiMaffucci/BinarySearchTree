@@ -18,7 +18,6 @@ if data in wn is less than desired value, then the new wn is now the right child
 if data in wn is greater than desired value, then the new wn is now the left child of the current wn (recursion occurs)
 
 DELETE FUNCTION
-//there's recursion here but i need to find out where; this is for sure the hardest function to write
 input(s): value
 
 find which node the value is stored at (this is our wn)
@@ -29,9 +28,11 @@ if wn has one child, make that one child the new wn and delete the old node
 (OPTION 2) if wn has two children, the wn is deleted and becomes the right child
 return new root
 
-INORDER FUNCTION (prints values in the tree in order)
-input(s): working node
+INORDER FUNCTION (prints values in the tree in order) - this function can be changed to do a whole load of things, just change the printing to do whatever else it is you want to do and add function parameters as needed
+    fair warning, this may get computationally intensive with large trees 
+input(s): working node (wn), path (left or right) (maybe)
 
-
-
-
+prints out all the numbers in the tree to the standard output/console
+if wn is empty do nothing or print a message and return
+if wn has no children then print it's number and return
+if wn has a value, print it, call InOrder to the left child node if possible, then to the right child node if possible
