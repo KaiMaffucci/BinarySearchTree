@@ -1,4 +1,5 @@
 // binary search tree program
+// TODO: proper documentation, makefile, seperate functions and test code into individual files
 
 #include <iostream>
 
@@ -6,13 +7,18 @@ using namespace std;
 
 class Node {
 
+    // attributes, instance variables, whatever you'd like to call them
     int data;
     Node* left;
     Node* right;
 
     public:
+
+        // constructors
         Node(); // default constructor
         Node(int value); // constructor
+
+        // methods
         Node* Search(Node* wn, int value);
         Node* Insert(Node* wn, int value); // inserts number into tree
         // TODO: InOrder function
@@ -73,7 +79,7 @@ Node* Node::Insert(Node* wn, int value) {
         return wn;
     }
 
-    return wn; // get rid of those pesky warnings
+    return wn; // get rid of those pesky warnings, maybe do stuff with it too
 }
 
 // returns smallest node in tree
@@ -90,7 +96,7 @@ Node* Node::Smallest(Node* wn) {
         return wn->Smallest(wn->left);
     }
 
-    return wn; // get rid of those pesky warnings
+    return wn; // get rid of those pesky warnings, maybe do stuff with it too
 }
 
 Node* Node::Delete(Node* wn, int value) {
@@ -137,7 +143,7 @@ Node* Node::Delete(Node* wn, int value) {
         }
     }
 
-    return wn; // get rid of warnings
+    return wn; // get rid of warnings, can maybe do stuff with it too
 }
 
 int main() {
