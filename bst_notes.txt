@@ -30,7 +30,7 @@ return new root
 
 INORDER FUNCTION (prints values in the tree in order) - this function can be changed to do a whole load of things, just change the printing to do whatever else it is you want to do and add function parameters as needed
     fair warning, this may get computationally intensive with large trees 
-input(s): working node (wn), path (left or right) (maybe)
+input(s): working node (wn)
 
 prints out all the numbers in the tree to the standard output/console
 if wn is empty do nothing or print a message and return

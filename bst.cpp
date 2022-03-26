@@ -19,11 +19,12 @@ class Node {
         Node(int value); // constructor
 
         // methods
+        // note: 'data' is an integer
         Node* Search(Node* wn, int value);
-        Node* Insert(Node* wn, int value); // inserts number into tree
-        // TODO: InOrder function
+        Node* Insert(Node* wn, int value); // inserts data into tree
         Node* Smallest(Node* wn); // returns smallest node in tree
-        Node* Delete(Node* wn, int value); // removes number from tree
+        Node* Delete(Node* wn, int value); // removes data from tree
+        Node* InOrder(Node* wn); // prints all data in the tree in order
 };
 
 // default constructor function
@@ -146,6 +147,30 @@ Node* Node::Delete(Node* wn, int value) {
     return wn; // get rid of warnings, can maybe do stuff with it too
 }
 
+// TODO: test - problem i could see happening is that it tries to access somewhere it can't, but i'm not too worried
+Node* Node::InOrder(Node* wn) {
+
+    // if wn isn't empty, do stuff
+    if (wn != NULL) {
+        // wn isn't NULL so it must have data, print it
+        cout << wn->data << endl;
+
+        // if it has a left child, run InOrder with left node
+        if ( wn->left != NULL ) {
+            //wn->left = 
+            wn->InOrder(wn->left);
+        }
+
+        // if it has a right child, run InOrder with right node
+        if ( wn->right != NULL ) {
+            //wn->right = 
+            wn->InOrder(wn->right);
+        }
+    }
+
+    return wn; // this is actually more crucial here than it is in the other methods
+}
+
 int main() {
 
     // all test code
@@ -159,11 +184,15 @@ int main() {
     tree.Insert(root, 9);*/
 
     Node tree(5);
+
     tree.Insert(&tree, 7);
     tree.Insert(&tree, 4);
     tree.Insert(&tree, 9);
     tree.Insert(&tree, 6);
+
     tree.Delete(&tree, 7);
+
+    tree.InOrder(&tree);
 
     //Node* test = tree.Smallest(&tree);
 
