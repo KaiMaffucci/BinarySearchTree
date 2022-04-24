@@ -100,6 +100,7 @@ Node* Node::Smallest(Node* wn) {
     return wn; // get rid of those pesky warnings, maybe do stuff with it too
 }
 
+// deletes an item from the tree
 Node* Node::Delete(Node* wn, int value) {
 
     // code somewhat resembles Find and Insert, could probably use Find in here 
