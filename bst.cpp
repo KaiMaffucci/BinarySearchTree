@@ -194,6 +194,7 @@ int main() {
     tree.Delete(&tree, 7);
 
     tree.InOrder(&tree);
+    // test
 
     //Node* test = tree.Smallest(&tree);
 
